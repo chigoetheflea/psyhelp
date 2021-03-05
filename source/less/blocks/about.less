@@ -1,0 +1,120 @@
+.about {
+  padding-top: 30px;
+
+  color: #ffffff;
+  background-color: @violet;
+
+  &::before {
+    position: absolute;
+    top: -95px;
+    left: -5px;
+
+    width: calc(100% + 10px);
+    height: 99px;
+
+    background: url("../img/element_mask_2.svg") 50% 100% no-repeat;
+    background-size: auto 100%;
+
+    content: "";
+  }
+}
+
+.about__container {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    z-index: -1;
+
+    width: 80%;
+    height: 80%;
+    max-width: 828px;
+
+    background: url("../img/pic_psy_logo.svg") 50% 0 no-repeat;
+    background-size: auto 100%;
+
+    transform: translateX(-50%);
+
+    content: "";
+  }
+}
+
+.about__content {
+  width: 50%;
+
+  &--left {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  &--right {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+.about__img {
+  display: block;
+  margin: 100px auto 0 auto;
+  width: 100%;
+  height: auto;
+  max-width: 1000px;
+}
+
+@media (max-width: @break-point-second) {
+  .about{
+    &::before {
+      left: 0;
+      width: 100%;
+    }    
+  }
+
+  .about__content {
+    width: 100%;
+
+    &:last-of-type {
+      margin-top: 15px;
+    }
+  }
+
+  .about__row {
+    display: block;
+  }
+}
+
+@media (max-width: @break-point-third) {
+  .about__container {
+    &::before {
+      top: -50px;
+    }
+  }
+
+  .about__img {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: @break-point-fourth) {
+  .about__content {
+    &--left {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .about__content {
+    &--left {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    &--right {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+.pointer {
+  position: relative;
+  flex-grow: 1;
+
+  height: 12px;
+  margin-left: 30px;
+
+  text-align: right;
+
+  &::before {
+    .transition();
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    width: 100%;
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: @violet;
+
+    content: "";
+  }
+}
+
+.pointer__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  fill: @violet;
+}

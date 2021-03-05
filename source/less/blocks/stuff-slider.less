@@ -1,0 +1,145 @@
+.stuff-slider__slide {
+  justify-content: space-between;
+}
+
+.stuff-slider__content {
+  flex-basis: 62.5%;
+  padding-top: 30px;
+}
+
+.stuff-slider__column-left {
+  flex-grow: 1;
+}
+
+.stuff-slider__img-wrapper {
+  position: relative;
+
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+
+  &::after,
+  &::before {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    border: 2px solid @black;
+    border-radius: 50%;
+
+    content: "";
+  }
+
+  &::before {
+    z-index: 10;
+    top: -15px;
+    left: -15px;
+  }
+
+  &::after {
+    z-index: 30;
+    top: 15px;
+    left: 15px;
+  }
+
+}
+
+.stuff-slider__img-rounder {
+  position: relative;
+  z-index: 20;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.stuff-slider__img {
+  .block-img(300px);
+}
+
+.stuff-slider__name {
+  margin: 0;
+  font-size: 28px;
+  line-height: 39px;
+  font-weight: 500;
+}
+
+.stuff-slider__occupation {
+  margin: 30px 0 0 0;
+}
+
+.stuff-slider__exp {
+  margin: 0;
+}
+
+.stuff-slider__occupation,
+.stuff-slider__exp,
+.stuff-slider__text {
+  font-size: 18px;
+  line-height: 25px;
+}
+
+.stuff-slider__text {
+  margin: 30px 0 0 0;
+}
+
+.stuff-slider__nav {
+  justify-content: center;
+  margin-top: 60px;
+}
+
+@media (max-width: @break-point-second) {
+  .stuff-slider__slide {
+    display: block;
+  }
+
+  .stuff-slider__text {
+    padding-left: 3px;
+  }
+
+  .stuff-slider__name,
+  .stuff-slider__occupation,
+  .stuff-slider__exp {
+    text-align: center;
+  }
+
+  .stuff-slider__content {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-third) {
+  .stuff-slider__img-wrapper {
+    width: 220px;
+    height: 220px;
+  }
+
+  .stuff-slider__content {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: @break-point-fourth) {
+  .stuff-slider__nav {
+    margin-top: 30px;
+  }
+
+  .stuff-slider__img-wrapper {
+    &::before {
+      top: -7px;
+      left: -7px;
+    }
+
+    &::after {
+      top: 7px;
+      left: 7px;
+    }
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .stuff-slider__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+

@@ -1,0 +1,58 @@
+.advantages__item {
+  width: 25%;
+  text-align: center;
+  background-size: contain;
+
+  &--blob-1 {
+    background: url("../img/bg_blob_1.svg") 50% 50% no-repeat;
+  }
+
+  &--blob-2 {
+    background: url("../img/bg_blob_2.svg") 50% 50% no-repeat;
+  }
+
+  &--blob-3 {
+    background: url("../img/bg_blob_3.svg") 50% 50% no-repeat;
+  }
+
+  &--blob-4 {
+    background: url("../img/bg_blob_4.svg") 50% 50% no-repeat;
+  }
+}
+
+.advantages__item-title {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 700;
+
+  margin: 0;
+}
+
+@media (max-width: @break-point-second) {
+  .advantages__title {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 60px 0 0 0;
+    clip-path: none;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .advantages__title {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .advantages__item {
+    width: 50%;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: @break-point-third) {
+  .advantages__item {
+    background-size: 80% auto;
+  }
+}

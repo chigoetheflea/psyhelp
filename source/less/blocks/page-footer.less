@@ -1,0 +1,135 @@
+.page-footer {
+  position: relative;
+  margin-top: 60px;
+
+  padding-bottom: 30px;
+  padding-top: 60px;
+
+  color: #ffffff;
+  background-color: @violet;
+
+  &::before {
+    position: absolute;
+    top: -3px;
+    left: -5px;
+
+    width: calc(100% + 10px);
+    height: 135px;
+
+    background: url("../img/element_mask_6.svg") 50% 0 no-repeat;
+    background-size: auto 100%;
+
+    content: "";
+  }
+}
+
+.page-footer__logo {
+  fill: #ffffff;
+}
+
+.page-footer__phone,
+.page-footer__email {
+  color: #ffffff;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+.page-footer__phone {
+  margin-top: 60px;
+
+  font-size: 44px;
+  line-height: 52px;
+  font-weight: 700;
+}
+
+.page-footer__email {
+  margin-top: 15px;
+
+  font-size: 24px;
+  line-height: 20px;
+}
+
+.page-footer__column-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-footer__column-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.page-footer__button {
+  margin-bottom: 60px;
+}
+
+.page-footer__copyright {
+  margin-top: 30px;
+  margin-bottom: 0;
+  line-height: 1;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: @break-point-second) {
+  .page-footer {
+    &::before {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: @break-point-tablet) {
+  .page-footer__row {
+    display: block;
+  }
+
+  .page-footer__column-left,
+  .page-footer__column-right {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-footer__button {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: @break-point-third) {
+  .page-footer__phone {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: @break-point-fourth) {
+  .page-footer {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .page-footer__phone {
+    font-size: 24px;
+    line-height: 20px;
+  }
+
+  .page-footer__logo {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,74 @@
+@keyframes modal-show {
+  40%,
+  100% {
+    transform: scale(1, 1);
+  }
+
+  80% {
+    transform: scale(1.05, 1.05);
+  }
+}
+
+.modal {
+  .transition();
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  &--open {
+    background-color: rgba(255, 255, 255, 0.9);
+    pointer-events: auto;
+
+    .modal__window {
+      opacity: 1;
+      animation: modal-show 0.76s;
+    }
+  }
+}
+
+.modal__window {
+  .transition(0.25s);
+  width: 100%;
+  max-width: 568px;
+  padding: 30px 30px 45px 30px;
+
+  text-align: center;
+
+  background-color: #ffffff;
+  border: 1px solid @gray-6;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+}
+
+.modal__title {
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.modal__descriptor {
+  margin-top: 13px;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+
+.modal__form {
+  max-width: 350px;
+  margin-top: 23px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.modal__button {
+  margin-top: 31px;
+}

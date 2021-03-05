@@ -1,0 +1,81 @@
+.slider-nav {
+  display: flex;
+}
+
+.slider-nav__button {
+  position: relative;
+
+  width: 200px;
+  height: 28px;
+  padding: 0;
+
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+
+  svg {
+    .transition(svg);
+
+    fill: @black;
+  }
+
+  &::before {
+    .transition();
+
+    position: absolute;
+    top: 50%;
+
+    width: calc(100% - 1px);
+    height: 2px;
+    margin-top: -1px;
+
+    background-color: @black;
+    border-radius: 2px;
+
+    content: "";
+  }
+
+  &:hover,
+  &:focus {
+    svg {
+      fill: @violet;
+    }
+
+    &::before {
+      background-color: @violet;
+      width: 80%;
+    }
+  }
+
+  &:active {
+    svg {
+      fill: @purple;
+    }
+
+    &::before {
+      background-color: @purple;
+      width: 80%;
+    }
+  }
+
+  &--next {
+    margin-left: 15px;
+    text-align: right;
+
+    &::before {
+      right: 1px;
+    }
+  }
+
+  &--prev {
+    margin-right: 15px;
+    text-align: left;
+
+    &::before {
+      left: 1px;
+    }
+  }
+}
+

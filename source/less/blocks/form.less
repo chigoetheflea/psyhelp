@@ -1,0 +1,127 @@
+.form__column-left {
+  flex-basis: 33.33%;
+}
+
+.form__column-right {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.form__label {
+  display: block;
+  padding-left: 30px;
+  margin-bottom: 15px;
+
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.form__input,
+.form__textarea {
+  .transition();
+
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  font-size: 18px;
+
+  border: 2px solid @black;
+  border-radius: 15px;
+  background: none;
+
+  &.error {
+    border-color: @red;
+  }
+
+  &:focus {
+    border-color: @plum;
+
+    outline: none;
+  }
+}
+
+.form__input {
+  height: 80px;
+  line-height: 1;
+}
+
+.form__group {
+  margin-top: 30px;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+.form__textarea {
+  flex-grow: 1;
+  padding: 24px 30px;
+  min-height: 250px;
+  line-height: 25px;
+}
+
+.form__required {
+  background: url("../img/icon_star.svg") top 15px right 15px no-repeat;
+  background-size: 10px auto;
+}
+
+.form__button-wrapper {
+  position: relative;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.form__result {
+  .transition(opacity);
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+
+  &--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.form_result-error,
+.form_result-success {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 30px;
+
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 15px;
+}
+
+.form_result-error {
+  background-color: @red;
+}
+
+.form_result-success {
+  background-color: @green;
+}
+
+@media (max-width: @break-point-tablet) {
+  .form__row {
+   display: block;
+  }
+
+  .form__column-right {
+    margin-top: 30px;
+  }
+}
+

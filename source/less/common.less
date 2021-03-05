@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+
+  min-width: 360px;
+
+  font-family: "Rubik", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: @black;
+
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  .transition();
+  text-decoration: none;
+  color: @black;
+
+  &:hover,
+  &:focus {
+    color: @violet;
+  }
+
+  &:active {
+    color: @plum;
+  }
+}

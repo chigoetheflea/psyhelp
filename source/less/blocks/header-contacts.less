@@ -1,0 +1,46 @@
+.header-contacts {
+  .list-style-none();
+
+  display: flex;
+  flex-wrap: wrap;
+
+  &>li {
+    margin-right: 30px;
+  }
+
+}
+
+.header-contacts__link {
+  &--heavy {
+    color: @violet;
+    text-decoration: underline;
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:active {
+      color: @plum;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: @break-point-third) {
+  .header-contacts {
+    flex-direction: column;
+
+    &>li {
+      margin: 0 0 5px 0;
+    }
+  }
+}
+
+@media (max-width: @break-point-mobile) {
+  .header-contacts {
+    align-items: center;
+    width: 100%;
+  }
+}

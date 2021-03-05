@@ -1,0 +1,178 @@
+.button {
+  .transition();
+
+  position: relative;
+  z-index: 20;
+
+  display: inline-block;
+  min-width: 200px;
+  margin: 0;
+  padding: 0;
+
+  background: none;
+  border: 0;
+
+  cursor: pointer;
+
+  span {
+    .transition();
+
+    display: block;
+
+    padding: 25px 30px;
+
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+    line-height: 30px;
+
+    background-color: @violet;
+    border: none;
+    border-radius: 15px;
+    pointer-events: none;
+  }
+
+  &:disabled {
+     pointer-events: none;
+
+    span {
+      background-color: @gray;
+    }
+  }
+
+  &::after,
+  &::before {
+    .transition();
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    border-radius: 15px;
+    border: 2px solid @black;
+
+    content: "";
+  }
+
+  &::before {
+    z-index: 30;
+    transform: translate(-15px, -15px);
+  }
+
+  &::after {
+    z-index: -1;
+    transform: translate(15px, 15px);
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      background-color: @plum;
+    }
+
+    &::before,
+    &::after {
+      transform: translate(0, 0);
+      border-color: @plum;
+    }
+  }
+
+  &:active {
+    span {
+      background-color: @purple;
+    }
+
+    &::before,
+    &::after {
+      transform: translate(0, 0);
+      border-color: @purple;
+    }
+  }
+
+  &--yellow {
+    span {
+      background-color: @redsand;
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        background-color: @yellow;
+      }
+
+      &::before,
+      &::after {
+        border-color: @yellow;
+      }
+    }
+
+    &:active {
+      span {
+        background-color: @creme;;
+      }
+
+      &::before,
+      &::after {
+        border-color: @creme;
+      }
+    }
+  }
+
+  &--white {
+    span {
+      color: @violet;
+      background-color: #ffffff;
+    }
+
+    &::after {
+      border-color: #ffffff;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      span {
+        color: @plum;
+        background-color: #ffffff;
+      }
+
+      &::before,
+      &::after {
+        border-color: #ffffff;
+      }
+    }
+
+    &:active {
+      span {
+        background-color: #ffffff;
+      }
+
+      &::before,
+      &::after {
+        border-color: @purple;
+      }
+    }
+  }
+}
+
+@media (max-width: @break-point-fourth) {
+  .button {
+    span {
+      padding: 17px 22px;
+    }
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      transform: translate(7px, 7px);
+    }
+  }
+}
